@@ -148,12 +148,12 @@ def send_email(error_host_details, arg):
 
 	#for inactive_host in inactive_host_details:
 		#if user in userconfig:
-	mail_to = config.get('USERS', 'infra')
+	mail_to = config.get('USERS', 'sangeeth')
 	message = MIMEMultipart("alternative")
 	if(arg == '--start'):
-		message["Subject"] =  "START FAILED : NCDEX YOTTA McAFee services"
+		message["Subject"] =  "START FAILED : Client1 McAFee services"
 	elif(arg == '--stop'):
-		message["Subject"] =  "STOP FAILED : NCDEX YOTTA McAFee services"
+		message["Subject"] =  "STOP FAILED : Client1 McAFee services"
 	else:
 		sys.exit(2)
 	message["From"] = mail_from
@@ -168,12 +168,18 @@ def send_email(error_host_details, arg):
 	email.sendmail(mail_from, mail_to, message.as_string())
 	email.quit()
 
+"""
+--Let's assume--
+Tasks' names are sEOD & eEOD.
+Check "EVENT_RESET" line in file "/use/the/path/to/some/task1/STATUS/StatusFile" is containing "DONE".
+Check "TASK_CLEAN" line in file  "/use/the/path/to/some/task2/STATUS/StatusFile" is containing "DONE".
+"""
 def check_sEOD_eEOD():
         sEOD_eEOD_status=""
-        surv_Job_complete='grep -v "#" /x01/survprod/mitops/mischeduler/STATUS/StatusFile | grep "\<220_SURV_PROD_EVENT_RESET\>" | grep "DONE"' #change accordingly
-        exch_Job_complete='grep -v "#" /x01/trddrprod/current/scripts/OPS_STATUS_FILE | grep "\<SYSTEM_CLEAN\>" | grep "DONE"' #change accordingly
+        s_Job_complete='grep -v "#" /use/the/path/to/some/task1/STATUS/StatusFile | grep "\<EVENT_RESET\>" | grep "DONE"' #change accordingly
+        e_Job_complete='grep -v "#" /use/the/path/to/some/task2/STATUS/StatusFile | grep "\<TASK_CLEAN\>" | grep "DONE"' #change accordingly
 
-        if os.popen(surv_Job_complete).read().strip() and os.popen(exch_Job_complete).read().strip():
+        if os.popen(s_Job_complete).read().strip() and os.popen(e_Job_complete).read().strip():
                 sEOD_eEOD_status="DONE"
 
         else:
@@ -191,14 +197,14 @@ def send_start_error_email(arg):
         mail_to = config.get('USERS', 'infra')
         message = MIMEMultipart("alternative")
         if(arg == '--start'):
-                message["Subject"] = "EOD STATUS ERROR : NCDEX DR McAFee services"
+                message["Subject"] = "Tasks STATUS ERROR : Client1 McAFee services"
         else:
                 sys.exit(2)
 
         message["From"] = mail_from
         message["To"] = mail_to
 
-        body = "<html><head><h2 style=\"color: #ff0000;\">EOD STATUS ERROR : NCDEX DR McAFee services</h2><p><strong>One of the Surv or Exch EOD jobs is not completed yet or both jobs are not completed yet.</strong><br /><strong style=\"color: #ff0000;\">Please investigate..!</strong></p><p><strong>&nbsp;</strong></p></head></html>"      
+        body = "<html><head><h2 style=\"color: #ff0000;\">Tasks STATUS ERROR : Client1 McAFee services</h2><p><strong>One of the Task1 or Task2 jobs is not completed yet or both jobs are not completed yet.</strong><br /><strong style=\"color: #ff0000;\">Please investigate..!</strong></p><p><strong>&nbsp;</strong></p></head></html>"      
         mail_body = MIMEText(body, "html")
         message.attach(mail_body)
 
@@ -225,7 +231,7 @@ def main():
 
 	else:
 		send_start_error_email(args)
-		logging.warning("One of the Surv or Exch EOD jobs is not completed yet or both jobs are not completed yet\nexiting main()...")
+		logging.warning("One of the task1 or task2 jobs is not completed yet or both jobs are not completed yet\nexiting main()...")
 		sys.exit(2)
 		
 	if len(error_host_details) > 0:
