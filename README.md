@@ -93,9 +93,17 @@ Check if TASK_CLEAN is DONE
 
 * Make a directory named **McAfee_Antivirus** as below in a server which act as a management server in your infrastructure.
 ```
-$mkdir -p /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus
+$ mkdir -p /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus
 ```
 * Download the source files to above location.
+* Make sure to assign rwx file permissions to owner only (**sangeeth** will be both the owner and the group).
+```
+$ cd /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/
+$ chown sangeeth:sangeeth *
+$ chmod 744 *
+```
+<img width="407" alt="image" src="https://user-images.githubusercontent.com/36575796/175772922-5759d4ff-e33a-4f78-bd53-60895adafb25.png">
+
 * Below listed commands require sudo privileges to run on a system. You may need to add below commands to sudoers file to be executed by the particular user (**sangeeth** user is used to access all servers) with sudo privilages, since the direct root access via SSH is disabled on the system servers.
 ```
 Add the following commands to sudoers file in order to be executed as the ENSLTP service stop commands:
@@ -119,11 +127,15 @@ Add the following commands to sudoers file in order to be executed as the ENSLTP
 30 7 * * 1-5 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
 ```
 
-* If you want to start and stop AV services **manually** run each command accordingly. 
+* If you want to start and stop AV services **manually**, run below commands accordingly. 
 ```
 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --start
 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
 ```
+
+* After the first execution, the Logs directory will be created inside /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/ as below. Only root user will have access to those log files.
+![image](https://user-images.githubusercontent.com/36575796/175773088-0c42dbd3-47b8-472d-9256-d8e7a93e99ab.png)
+
 
 ## Help
 
