@@ -13,10 +13,12 @@ An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
 
-### Dependencies
+### Tested environment
 
-* OS: Redhat version
-* Kernal: 
+* Operating System: Red Hat Enterprise Linux Server 7.8 (Maipo)
+* CPE OS Name: cpe:/o:redhat:enterprise_linux:7.8:GA:server
+* Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
+* Architecture: x86-64 
 * AV: McAfee version
 
 ### Installing
@@ -36,8 +38,14 @@ code blocks for commands
 
 Any advise for common problems or issues.
 ```
-command to run if program contains helper info
+/home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py
+
+Usage : Antivirus.py
+	--start	<start the AV services>
+	--stop	<stop the AV services>
 ```
+<img width="641" alt="image" src="https://user-images.githubusercontent.com/36575796/175769092-cabf88d4-ad96-464f-8202-22f78ba5cb1d.png">
+
 
 ## Authors
 
