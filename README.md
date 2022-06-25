@@ -19,7 +19,13 @@ An in-depth paragraph about your project and overview of use.
 * CPE OS Name: cpe:/o:redhat:enterprise_linux:7.8:GA:server
 * Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
 * Architecture: x86-64 
-* AV: McAfee version
+* McAfee Endpoint Security for Linux Threat Prevention
+Version : 10.7.8.12
+License : Full
+DAT Version : 4978.0
+Engine Version : 6300.9389
+Exploit Prevention Content Version : 10.7.0.00079
+
 
 ### Installing
 
