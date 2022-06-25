@@ -21,10 +21,10 @@ An in-depth paragraph about your project and overview of use.
 * Architecture: x86-64 
 * McAfee Endpoint Security for Linux Threat Prevention
 **Version : 10.7.8.12
-**License : Full
-**DAT Version : 4978.0
-**Engine Version : 6300.9389
-**Exploit Prevention Content Version : 10.7.0.00079
+License : Full
+DAT Version : 4978.0
+Engine Version : 6300.9389
+Exploit Prevention Content Version : 10.7.0.00079**
 
 
 ### Installing
