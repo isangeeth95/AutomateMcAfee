@@ -6,6 +6,11 @@ This will automate the start & stop of McAfee services in your Linux server envi
 
 An in-depth paragraph about your project and overview of use.
 
+![image](https://user-images.githubusercontent.com/36575796/175768354-5252671e-7ff8-4d00-aa51-62278df80ed5.png)
+
+![image](https://user-images.githubusercontent.com/36575796/175768367-cb8bda2b-500a-417e-81a3-90c07b1e0dae.png)
+
+
 ## Getting Started
 
 ### Dependencies
