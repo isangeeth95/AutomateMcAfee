@@ -161,6 +161,10 @@ Usage : Antivirus.py
 * 0.0.1
     * Initial Release
 
+## Future work
+
+Further, if we look at this in a disk utilization perspective, in a later stage this might require another script to build a log clean up mechanism to automatically housekeep logs which are over a month old.
+
 ## Acknowledgments
 
 Inspiration, code snippets:
