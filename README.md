@@ -13,7 +13,7 @@ This can be deployed only in servers which are already having running McAfee AV.
 
 Let's build up a scenario. 
 
-You have a list of production servers which are being maintained under a critical infrastructure. Your management/client team has decided to deploy an endpoint solution (Assume **McAfee** as the AV) in all of the production servers. But you cannot run the AV services in the production hours. And direct root access via SSH is disabled as well. Below are list of concerns what your management/client has. 
+You have a list of production servers which are being maintained under a critical infrastructure. Your management/client team has decided to deploy an endpoint solution (Assume **McAfee** as the AV) in all of the production servers throughout **weekdays**. But you **cannot run the AV services in the production hours**. And direct root access via SSH is disabled as well. Below are list of concerns what your management/client has. 
 
 
 * Creating a cronjob in a management server to start at a specific time (Assume 8:30 PM) to run a shell script to start McAfee Antivirus services which include
@@ -111,10 +111,18 @@ Add the following commands to sudoers file in order to be executed as the ENSLTP
 
 ### Executing program
 
-* Create two cronjobs in the selected management server to start and stop AV services accordingly. 
+* Create two cronjobs in the selected management server to start and stop AV services **automatically**. 
+  * First will run At 20:30 on every day-of-week from Monday through Friday.
+  * Second will run At 7:30 on every day-of-week from Monday through Friday.
 ```
 30 20 * * 1-5 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --start
 30 7 * * 1-5 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
+```
+
+* If you want to start and stop AV services **manually** run each command accordingly. 
+```
+/home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --start
+/home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
 ```
 
 ## Help
