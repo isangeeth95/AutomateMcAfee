@@ -1,6 +1,13 @@
 # AutomateMcAfee
 
-This will automate the start & stop of McAfee services in your Linux server environment where you need to run it a limited time. 
+This will automate the start & stop of McAfee services in your Linux server environment where you need to run it only a limited time. 
+
+This can be deployed only in servers which are already having running McAfee AV.
+
+##### Screenshots of the active status of both AV services
+![image](https://user-images.githubusercontent.com/36575796/175768354-5252671e-7ff8-4d00-aa51-62278df80ed5.png)
+
+![image](https://user-images.githubusercontent.com/36575796/175768367-cb8bda2b-500a-417e-81a3-90c07b1e0dae.png)
 
 ## Description
 
@@ -65,11 +72,6 @@ Check if TASK_CLEAN is DONE
 7.	Otherwise, it will generate an E-mail to notify us by including all servers which have failed to stop the McAfee Antivirus services successfully in order to take necessary actions further.
 ```
 
-##### Screenshots of the active status of both AV services
-![image](https://user-images.githubusercontent.com/36575796/175768354-5252671e-7ff8-4d00-aa51-62278df80ed5.png)
-
-![image](https://user-images.githubusercontent.com/36575796/175768367-cb8bda2b-500a-417e-81a3-90c07b1e0dae.png)
-
 
 ## Getting Started
 
@@ -79,6 +81,7 @@ Check if TASK_CLEAN is DONE
 * CPE OS Name: cpe:/o:redhat:enterprise_linux:7.8:GA:server
 * Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
 * Architecture: x86-64 
+* Python version: python-2.7.5-88.el7.x86_64
 * McAfee Endpoint Security for Linux Threat Prevention
   * Version : 10.7.8.12
   * License : Full
@@ -88,19 +91,19 @@ Check if TASK_CLEAN is DONE
 
 ### Installing
 
-* Make a directory named **McAfee_Antivirus** as below
+* Make a directory named **McAfee_Antivirus** as below in a server which act as a management server in your infrastructure.
 ```
 $mkdir -p /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus
 ```
-* Download the files to a server which act as a management server in your infrastructure.
+* Download the source files to above location.
 * Below listed commands require sudo privileges to run on a system. You may need to add below commands to sudoers file to be executed by the particular user (**sangeeth** user is used to access all servers) with sudo privilages, since the direct root access via SSH is disabled on the system servers.
 ```
-To stop the ENSLTP service, add the following commands to sudoers file:
+Add the following commands to sudoers file in order to be executed as the ENSLTP service stop commands:
 
 # /opt/McAfee/ens/tp/init/mfetpd-control.sh stop
 # /opt/McAfee/ens/esp/init/mfeespd-control.sh stop
 
-To start the ENSLTP service, add the following commands to sudoers file:
+Add the following commands to sudoers file in order to be executed as the ENSLTP service start commands:
 
 # /opt/McAfee/ens/esp/init/mfeespd-control.sh start
 # /opt/McAfee/ens/tp/init/mfetpd-control.sh start
@@ -108,10 +111,10 @@ To start the ENSLTP service, add the following commands to sudoers file:
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* Create two cronjobs in the selected management server to start and stop AV services accordingly. 
 ```
-code blocks for commands
+30 20 * * 1-5 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --start
+30 7 * * 1-5 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
 ```
 
 ## Help
