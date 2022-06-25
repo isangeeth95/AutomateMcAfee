@@ -4,7 +4,9 @@ This will automate the start & stop of McAfee services in your Linux server envi
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Let's build up a scenario. 
+
+You have a list of production servers which are being maintained under a critical infrastructure.
 
 ![image](https://user-images.githubusercontent.com/36575796/175768354-5252671e-7ff8-4d00-aa51-62278df80ed5.png)
 
@@ -20,12 +22,11 @@ An in-depth paragraph about your project and overview of use.
 * Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
 * Architecture: x86-64 
 * McAfee Endpoint Security for Linux Threat Prevention
-**Version : 10.7.8.12
-License : Full
-DAT Version : 4978.0
-Engine Version : 6300.9389
-Exploit Prevention Content Version : 10.7.0.00079**
-
+  * Version : 10.7.8.12
+  * License : Full
+  * DAT Version : 4978.0
+  * Engine Version : 6300.9389
+  * Exploit Prevention Content Version : 10.7.0.00079
 
 ### Installing
 
@@ -42,9 +43,9 @@ code blocks for commands
 
 ## Help
 
-Any advise for common problems or issues.
+Issue below command to get the usage
 ```
-/home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py
+$ /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py
 
 Usage : Antivirus.py
 	--start	<start the AV services>
@@ -57,26 +58,15 @@ Usage : Antivirus.py
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+* Sangeeth Sankalpa  
+[@sangeeth-sankalpa](https://linkedin.com/in/sangeeth-sankalpa)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
+* 0.0.1
     * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Inspiration, code snippets:
+* [Sathish Bowatta](https://github.com/zathizh)
