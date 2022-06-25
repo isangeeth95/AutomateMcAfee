@@ -133,7 +133,8 @@ Add the following commands to sudoers file in order to be executed as the ENSLTP
 /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/AntivirusStart.py --stop
 ```
 
-* After the first execution, the Logs directory will be created inside /home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/ as below. Only root user will have access to those log files.
+* After the first execution, the Logs directory will be created inside **/home/McAfee_Antivirus_san/scripts/McAfee_Antivirus/** as below. **Only root user will have access to those log files**.
+
 ![image](https://user-images.githubusercontent.com/36575796/175773088-0c42dbd3-47b8-472d-9256-d8e7a93e99ab.png)
 
 
