@@ -2,7 +2,9 @@
 
 This will automate the start & stop of McAfee services in your Linux server environment where you need to run it only a limited time. 
 
-This can be deployed only in servers which are already having running McAfee AV.
+⚠️ This can be deployed only in servers which are already having running McAfee AV.
+
+✅ 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 𝗻𝗼𝘁𝗲: 𝗦𝗶𝗺𝗽𝗹𝘆 𝗿𝗲𝗽𝗹𝗮𝗰𝗲 𝗮 𝘀𝗲𝗿𝘃𝗶𝗰𝗲 𝘄𝗵𝗶𝗰𝗵 𝘆𝗼𝘂 𝗿𝗲𝗾𝘂𝗶𝗿𝗲 𝗶𝗻𝘀𝘁𝗲𝗮𝗱 𝗼𝗳 𝗴𝗶𝘃𝗲𝗻 𝗠𝗰𝗔𝗳𝗲𝗲 𝘀𝗲𝗿𝘃𝗶𝗰𝗲 𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝘀𝘁𝗮𝗿𝘁 & 𝘀𝘁𝗼𝗽 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗰𝗿𝗶𝘁𝗶𝗰𝗮𝗹 𝗟𝗶𝗻𝘂𝘅 𝘀𝗲𝗿𝘃𝗲𝗿 𝗶𝗻𝗳𝗿𝗮𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲
 
 ##### Screenshots of the active status of both AV services
 ![image](https://user-images.githubusercontent.com/36575796/175768354-5252671e-7ff8-4d00-aa51-62278df80ed5.png)
